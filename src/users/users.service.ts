@@ -4,6 +4,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { User } from '../typeorm/user.entity';
 import { NotFoundException } from '@nestjs/common';
 import { CreateUserDto } from './dtos/create-user.dto';
+import { UpdateUserDto } from './dtos/update-user.dto';
+import {UserDto} from './dtos/users.dto';
 
 @Injectable()
 export class UsersService {
@@ -19,8 +21,8 @@ export class UsersService {
 		return this.userRepository.save(newUser);
 	}
 
-	create(intraId: string, password: string) {
-		const user = this.userRepository.create( {intraId, password} );
+	create(intraId: string) {
+		const user = this.userRepository.create( {intraId} );
 		//how about type checking in saving?
 		return this.userRepository.save(user);
 		//return this.repo.save(email, password);//not executing hooks -> no logs
@@ -29,14 +31,18 @@ export class UsersService {
 		//saving is stroing in db
 	}
       
-	findUserById(id: number) {
+	async findUserById(id: number) : Promise<User | null> {
 		return this.userRepository.findOneById(id);
 	}
 
-	findUserByIntraId(intraId: string) {
+	async findUserByIntraId(findIntraId: string) : Promise<User | null> {
 		//find all of entities with query
 		//return array
-		return this.userRepository.find({ where: {intraId}});
+		console.log("finding Intra ID in service : " + findIntraId);
+		const user  = await this.userRepository.findOneBy({intraId: findIntraId});
+		if (!user)
+			return (null);
+		return (user);
 	}
 
 	async update(id: number, attrs: Partial<User>) {
@@ -56,5 +62,6 @@ export class UsersService {
 		}
 		return this.userRepository.remove(user);
 	}
+
 
 }

@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { forwardRef, Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppService } from './app.service';
@@ -7,11 +7,13 @@ import { AuthController } from './auth/auth.controller';
 import { AuthModule } from './auth/auth.module';
 import { UsersController } from './users/users.controller';
 import { ChannelModule } from './channel/channel.module';
+import {HttpModule} from '@nestjs/axios';
 
 @Module({
   imports: [
-		AuthModule,
+		forwardRef(() => AuthModule),
 		UsersModule,
+		HttpModule,
 		TypeOrmModule.forRoot({
 		  "type": "postgres",
 		  "host": "localhost",
@@ -19,8 +21,7 @@ import { ChannelModule } from './channel/channel.module';
 		  "username": "gwagdong-u",
 		  "password": "",
 		  "database": "tr42",
-		  "synchronize": true,
-		  "logging": true,
+		  synchronize: true,
 		  "entities": ["dist/**/*.entity.{ts,js}"]
 		}),
 		ChannelModule,

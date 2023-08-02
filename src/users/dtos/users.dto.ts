@@ -1,4 +1,6 @@
 import { Expose, Exclude } from "class-transformer";
+import {Transform} from "stream";
+import { User } from "src/typeorm";
 
 export class UserDto{
 
@@ -19,4 +21,8 @@ export class UserDto{
 
 	@Expose()
 	rank: number;
+
+	@Expose()
+	friends : User[];
+	
 }

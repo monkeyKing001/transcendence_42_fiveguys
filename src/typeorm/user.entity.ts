@@ -27,15 +27,17 @@ export class User {
   @Min(0)
   intraId: string;
 
-  @Column()
-  password: string;
-
-
   @Column({ unique: true, nullable: true })
   nickname: string;
 
-  @Column({ default: UserStatus.Offline })
-  status: UserStatus;
+  @Column({ unique: true, nullable: true })
+  name: string;
+
+  //0 -> offline
+  //1 -> online
+  //2 -> ongame
+  @Column({ default: 0})
+  status: number;
 
   @ManyToMany(() => User)
   @JoinTable()
@@ -62,6 +64,9 @@ export class User {
 
   @Column({ default: false })
   twoFactAuth: boolean;
+  
+  @Column({ default: false })
+  avatarinit: boolean;
 
   @AfterInsert()
   logInsert() {

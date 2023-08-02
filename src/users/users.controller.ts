@@ -31,6 +31,11 @@ export class UsersController {
 		return user;
 	}
 
+	@Post('/test')
+	test(){
+		console.log("test post users/test/")
+	}
+
 	@Get('/:id')
 	async findUser(@Param('id') id: string){
 //		console.log("GET PARAM called");

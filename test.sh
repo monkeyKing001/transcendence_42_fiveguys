@@ -7,14 +7,32 @@
 ##    -H 'Content-Type: application/json' \
 ##    -d '{ "title": "fooBatch", "completed": false, "userId": 1 }' \
 #
-echo "\nsignup test"
-	curl -s -X POST \
-	   'http://localhost:3000/auth/signup' \
-	   -H 'Content-Type: application/json' \
-		-d '{
-			"intraId": "test",
-			"password" : "password"
-		}' \
+#echo "\nsignup test"
+#	curl -s -X POST \
+#	   'http://localhost:3000/auth/signup' \
+#	   -H 'Content-Type: application/json' \
+#		-d '{
+#			"intraId": "test",
+#			"password" : "password"
+#		}' \
+#
+#echo "\nsignup test"
+#	curl -s -X POST \
+#	   'http://localhost:3000/auth/signup' \
+#	   -H 'Content-Type: application/json' \
+#		-d '{
+#			"intraId": "test2",
+#			"password" : "password"
+#		}' \
+#
+#echo "\nsignup test"
+#	curl -s -X POST \
+#	   'http://localhost:3000/auth/signup' \
+#	   -H 'Content-Type: application/json' \
+#		-d '{
+#			"intraId": "test3",
+#			"password" : "password"
+#		}' \
 
 #signin test worng`
 #echo "WRONG TEST"
@@ -26,14 +44,40 @@ echo "\nsignup test"
 #	}' \
 
 #signin test correct`
-echo "\nCORRECT TEST"
+echo "\nCORRECT TEST : signin"
  curl -s -X POST \
-    'http://localhost:3000/auth/signin' \
+    'http://localhost:3001/auth/signin' \
     -H 'Content-Type: application/json' \
 	-d '{
-		"intraId": "test",
+		"intraId": "test2",
 		"password" : "password"
 	}' \
+
+echo "\nCORRECT TEST : signin"
+ curl -s -X POST \
+    'http://localhost:3001/auth/signin' \
+    -H 'Content-Type: application/json' \
+	-d '{
+		"intraId": "test3",
+		"password" : "password"
+	}' \
+
+echo "\nCORRECT TEST : update user info"
+ curl -s -X PATCH \
+    'http://localhost:3001/users/3' \
+    -H 'Content-Type: application/json' \
+	-d '{
+		"nickname" : "newNickName",
+		"status" : 2,
+		"wins" : 42
+	}' \
+
+ curl -s -X GET \
+    'http://localhost:3001/users/3' \
+
+echo "\nTEST : login fortytwo"
+ curl -s -X POST \
+    'http://localhost:3001/auth/loginfortytwo' \
 #
 ##signin test wrong password
 # curl -s -X POST \
