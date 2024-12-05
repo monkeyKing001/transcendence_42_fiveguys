@@ -1,0 +1,174 @@
+.background {
+  width: 100vw;
+  height: 100vb;
+  background-color: #2b2b2b;
+}
+#count {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  font-size: 300px;
+
+}
+
+#winner-box {
+  background-color: #fff;
+  border: 2px solid #333;
+  top : 40%;
+  left : 10%;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  width : 80%;
+  height: 20%;
+  z-index: 1;
+  margin: 0;
+  position: absolute;
+
+}
+
+#winner-box h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+#winner-box p {
+  font-size: 24px;
+  color: #00aaff; /* 승자 정보 텍스트 색상 설정 */
+}
+
+.pong {
+  width: 1440px;
+  height: 1024px;
+  min-width: 1440px;
+  height: 1024px;
+  position: relative;
+  background-color: #2b2b2b;
+}
+
+.gameset {
+  width: 100%;
+  height: 87%;
+  border: 5px white solid;
+  position: relative;
+}
+
+.obstacle {
+  top : 0%;
+  left : 0%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#obstacle1 {
+  height: 14%;
+  width: 1%;
+  top: 60%;
+  left: 50%;
+  position: absolute;
+
+}
+
+#obstacle2 {
+  height: 14%;
+  width: 1%;
+  top: 40%;
+  left: 40%;
+  position: absolute;
+
+}
+
+#obstacle3 {
+  height: 14%;
+  width: 1%;
+  top: 40%;
+  left: 60%;
+  position: absolute;
+
+
+}
+
+.pad2 {
+  height: 25%;
+  width: 1%;
+  border-radius: 20px;
+  top: 32%;
+  left: 5%;
+  position: absolute;
+
+}
+.pad1 {
+  height: 25%;
+  width: 1%;
+  border-radius: 20px;
+  top: 32%;
+  right: 5%;
+  position: absolute;
+}
+
+.canvas {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.info {
+  width: 100%;
+  height: 13%;
+  display: flex;
+}
+.p2 {
+  width: 30%;
+  height: 100%;
+  border-left: 2.5px solid #ffffff;
+}
+
+.user1 {
+  color: #ffffff;
+  text-align: center;
+  vertical-align: text-middle;
+  font-size: 90px;
+  font-family: Inter;
+
+  width: 20%;
+  height: 100%;
+}
+.user2 {
+  color: #ffffff;
+  text-align: center;
+  vertical-align: text-middle;
+  font-size: 90px;
+  font-family: Inter;
+
+  width: 20%;
+  height: 100%;
+}
+.p1 {
+  width: 30%;
+  height: 100%;
+  border-right: 2.5px solid #ffffff;
+}
+#score_1 {
+  color: #ffffff;
+  text-align: center;
+  vertical-align: text-middle;
+  font-size: 110px;
+  font-family: Inter;
+  line-height: auto;
+  border-style: hidden;
+  outline: none;
+  padding: 0% 0% 0% 50%;
+}
+
+#score_2 {
+  color: #ffffff;
+  text-align: center;
+  vertical-align: text-middle;
+  font-size: 110px;
+  font-family: Inter;
+  line-height: auto;
+  border-style: hidden;
+  outline: none;
+  padding: 0% 50% 0% 0%;
+}

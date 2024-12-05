@@ -1,0 +1,30 @@
+
+.account-box {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.account-box div {
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
+
+.account-box button {
+	background-color: #3c3c3c;
+	width: 100px;
+	height: 30px;
+}
+
+.account-box input {
+	background-color: #838383;
+	margin-left: 10px;
+	margin-right: 10px;
+	color: #e0e0e0;
+}
+
+.account-box .avatar-file {
+	width: 275px;
+}

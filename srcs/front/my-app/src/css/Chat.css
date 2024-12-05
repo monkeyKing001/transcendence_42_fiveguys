@@ -1,0 +1,243 @@
+.chat_btn {
+  border-bottom: black;
+}
+
+.chat_memeber_count {
+  position: absolute;
+  right: 10%;
+}
+
+.drawer-side li {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #8a8a8a;
+}
+
+.chat-container {
+  margin-top: 150px;
+  width: 45%;
+  height: 80%;
+  position: absolute;
+  padding: 10px 10px 10px 80px;
+}
+
+.chat-box {
+  width: 73%;
+  height: 90%;
+  background-color: #3c3c3c;
+  box-shadow: 5px 5px 5px 5px rgb(39, 39, 39);
+  border-radius: 5px;
+  padding: 20px 20px 20px 20px;
+  text-align: left;
+  overflow-y: scroll;
+}
+
+.chat-box::-webkit-scrollbar {
+  display: none;
+}
+
+.chat-container .chat-input {
+  display: flex;
+  width: 75%;
+  height: 10%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-container .input {
+  width: 80%;
+  background-color: rgb(37, 37, 37);
+  color: white;
+  border-radius: 0px;
+  border-color: rgb(189, 189, 189);
+  outline: 1px solid rgb(189, 189, 189);
+}
+
+.chat-container .chat-input button {
+  background-color: rgb(206, 133, 37) !important;
+  border-color: rgb(206, 133, 37) !important;
+  border-radius: 0px;
+  margin-bottom: 50px;
+}
+
+.chat-container .chat-member-list {
+  width: 22%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 2%;
+  min-width: 100px;
+  min-height: 450px;
+  text-align: left;
+}
+
+.chat-member-list ul {
+  height: 80%;
+  border: 1px solid #3c3c3c;
+  align-items: center;
+  overflow-y: auto;
+  font-size: 20px;
+}
+
+.chat-member-list li {
+  border-bottom: 1px solid #3c3c3c;
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.chat-member-list li input {
+  margin-right: 10px;
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.chat-member-list .chat-member-button {
+  width: 100%;
+  height: 20%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.chat-member-list .chat-member-button button {
+  margin-left: 2px;
+  margin-right: 2px;
+  width: 30%;
+  height: 20%;
+  background-color: #3c3c3c;
+  border: 1px solid #3c3c3c;
+  border-radius: 3px;
+  align-items: center;
+}
+
+/* 
+* radio button css
+*
+*/
+
+.chat-set-modal .profile-modal {
+  height: 300px;
+  min-height: 300px;
+}
+
+.container form {
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border: 2px solid black;
+}
+
+.container .form-container {
+  display: flex;
+  margin-left: 10px;
+}
+
+.container label {
+  display: flex;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.375em;
+}
+
+.container label input {
+  position: absolute;
+  left: -9999px;
+}
+
+.container label input:checked + span {
+  background-color: #414181;
+  color: white;
+}
+
+.container label input:checked + span:before {
+  box-shadow: inset 0 0 0 0.4375em #00005c;
+}
+
+.container label span {
+  display: flex;
+  align-items: center;
+  padding: 0.375em 0.75em 0.375em 0.375em;
+  border-radius: 99em;
+  transition: 0.25s ease;
+  color: #414181;
+}
+
+.container label span:hover {
+  background-color: #d6d6e5;
+}
+
+.container label span:before {
+  display: flex;
+  flex-shrink: 0;
+  content: "";
+  background-color: #fff;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  margin-right: 0.375em;
+  transition: 0.25s ease;
+  box-shadow: inset 0 0 0 0.125em #00005c;
+}
+
+/* setting button */
+.setting-button {
+  position: absolute;
+  display: inline-block;
+  right: 15px;
+  bottom: 15px;
+  background: linear-gradient(to bottom, #1b1c3f, #4a4e91);
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  border-radius: 14px;
+  padding: 10px 22px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: button-shimmer 2s infinite;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover animation */
+.setting-button:hover {
+  background: linear-gradient(to bottom, #2c2f63, #5b67b7);
+  animation: button-particles 1s ease-in-out infinite;
+  transform: translateY(-2px);
+}
+
+/* Click animation */
+.setting-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Shimmer animation */
+@keyframes button-shimmer {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
+
+/* Particle animation */
+@keyframes button-particles {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
+
+/*  */

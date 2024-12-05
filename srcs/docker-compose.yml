@@ -1,0 +1,84 @@
+version: "3.9"
+
+services:
+  # Nest.js backend service
+  front:
+    container_name: front
+    build: ./front
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - tran_net
+    volumes:
+      - front_vol:/front/my-app
+    env_file:
+      - .env
+
+  back:
+    container_name: back
+    build: ./back
+    restart: always
+    ports:
+      - "3001:3001"
+    networks:
+      - tran_net
+    volumes:
+      - back_vol:/back/my-app
+    env_file:
+      - .env
+
+  # PostgreSQL service
+  db:
+    container_name: postgres
+    image: postgres:latest
+    restart: unless-stopped
+    volumes:
+      - postgres_vol:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - tran_net
+    env_file:
+      - .env
+
+  # Pg Admin service
+  pg_admin:
+    # 사용할 이미지
+    image: dpage/pgadmin4
+    restart: always
+    container_name: pgadmin4
+    ports:
+      - "5050:80"
+    volumes:
+      - pg_admin_vol:/var/lib/pgadmin
+    depends_on:
+      - db
+    env_file:
+      - .env
+
+volumes:
+  front_vol:
+    driver_opts:
+      type: none
+      device: ${PWD}/srcs/front/my-app
+      o: bind
+  postgres_vol: # This volume will persist the PostgreSQL data
+    driver_opts:
+      type: none
+      device: ${PWD}/srcs/database/postgres
+      o: bind
+  pg_admin_vol:
+    driver_opts:
+      type: none
+      device: ${PWD}/srcs/database/pg_admin
+      o: bind
+  back_vol:
+    driver_opts:
+      type: none
+      device: ${PWD}/srcs/back/my-app
+      o: bind
+
+networks:
+  tran_net:
+    driver: bridge

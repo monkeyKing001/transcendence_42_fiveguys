@@ -1,0 +1,33 @@
+.leaderboard-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 30px 30px 30px 30px;
+  flex-wrap: wrap;
+}
+
+.leaderboard-container .ranklist {
+  align-items: center;
+  height: 50px;
+  display: flex;
+}
+
+.leaderboard-container .rank {
+  font-size: 30px;
+  width: 10%;
+}
+
+.leaderboard-container .nickname {
+  margin-left: 30px;
+  width: 40%;
+}
+
+.leaderboard-container .number {
+  margin-left: 50px;
+  width: 40%;
+}
+
+.leaderboard-container .ratio {
+  margin-left: 50px;
+  width: 10%;
+}

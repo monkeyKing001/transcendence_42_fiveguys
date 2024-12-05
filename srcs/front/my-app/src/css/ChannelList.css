@@ -1,0 +1,21 @@
+.channel-access {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.join-button {
+  background-color: rgb(50, 185, 230);
+}
+
+.channel-list .profile-modal {
+  height: 300px;
+  min-height: 300px;
+  width: 300px;
+  min-width: 300px;
+}
+.channel-list .close {
+  height: 40px;
+  width: 40px;
+}

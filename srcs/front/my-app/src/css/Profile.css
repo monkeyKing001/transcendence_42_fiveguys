@@ -1,0 +1,93 @@
+.my-profile-container {
+  /* background-color: black; */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 30px 30px 30px 30px;
+  display: flex;
+  flex-wrap: wrap;
+
+  /* 모달 창아래에 히스토리가 튀어나오는 것 방지 */
+  /* overflow: hidden; */
+}
+
+.avatar-button-div {
+  width: 30%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  display: grid;
+  grid-template-rows: 220px 200px;
+}
+
+.nickname-history-div {
+  width: 70%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.avatar-wrapper {
+  width: 200px;
+  height: 200px;
+  /* transform: translate(10%); */
+  /* transform: translate(-100px); */
+  place-items: center;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.my-profile-container .my-nickname {
+  font-size: 30px;
+  color: #dddddd;
+}
+
+.my-profile-container .fix-profile {
+  width: 100%;
+  height: 60%;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  margin-top: 10%;
+}
+
+.fix-profile .btn-fix {
+  margin-bottom: 40px;
+  width: 70%;
+  height: 40px;
+}
+
+.my-profile-container .history {
+  margin-top: 5%;
+  width: 90%;
+  height: 80%;
+  padding: 10px 10px 10px 10px;
+  border: 1px solid #3c3c3c;
+  margin-left: 5%;
+}
+
+.my-profile-container .history li {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 40px;
+
+  border-bottom: 1px solid #3c3c3c;
+}
+
+.my-profile-container .history ul {
+  border: none;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.my-profile-container .history ul::-webkit-scrollbar {
+  display: none;
+}

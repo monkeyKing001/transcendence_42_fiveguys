@@ -1,0 +1,29 @@
+.profile-modal {
+  width: 50%;
+  height: 50%;
+  min-width: 800px;
+  min-height: 700px;
+  position: absolute;
+  /* max-width: 1000px; */
+  /* max-height: 1000px; */
+  /* z 포지션을 최상위로  */
+  z-index: 1001;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: gray;
+  border: 1px solid black;
+  color: black;
+  border-radius: 8px;
+}
+
+.close {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(224, 82, 82);
+  border-radius: 10px;
+  right: 5px;
+  top: 5px;
+}

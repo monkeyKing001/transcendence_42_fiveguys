@@ -1,0 +1,22 @@
+
+.background .nfh {
+	font-size: 100px;
+	color: #e74c3c;
+}
+  
+.background .nfp {
+	position: absolute;
+	font-size: 24px;
+	margin-top: 140px;
+}
+  
+.background .nfa {
+	text-decoration: none;
+	color: #3498db;
+	font-size: 18px;
+	display: block;
+	margin-top: 20px;
+	position: absolute;
+	margin-top: 200px;
+}
+  
